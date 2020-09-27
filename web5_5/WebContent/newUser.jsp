@@ -16,13 +16,21 @@
 </head>
 <body>
 
-	<br /> Please newUser!!
-	<form method="post" action="newUser_and_forward.jsp">
+	<br /> Please signup!!
+	<form method="post" action="newUser_and_forward.jsp"> 
 		<table>
 			<tr>
-				<td>Name:</td>
-				<td><input type="text" id="username" name="username" size=12 onblur="return doWork();" /></td>
-				<td><span id="total"></span></td>
+				<td>Firstname-Lastname:</td>
+				<td><input type="text" name="name" size=60 /></td>
+			</tr>
+			<tr>
+				<td>Birthdate:</td>
+			 <td><input type="date" name="birthdate"  /></td>
+			</tr>
+			<tr>
+				<td>Username:</td>
+			<td><input type="text" id="username" name="username" value=<%=request.getParameter("username")%> size=12 onblur="return doWork();" /></td> 
+				<td><span id="total"></span></td> 
 			</tr>
 			<tr>
 				<td>Password:</td>

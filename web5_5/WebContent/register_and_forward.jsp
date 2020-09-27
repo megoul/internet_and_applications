@@ -7,6 +7,7 @@
 	Connection connection = null;
 	Statement statement = null;	
 	ResultSet rs = null;
+	ResultSet rs1=null;
 %>
 
 
@@ -40,6 +41,8 @@
 				String username = request.getParameter("username");
 				String password = request.getParameter("password");
 				
+				
+				
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				connection = DriverManager.getConnection(connectionURL, "root",
 						"");
@@ -56,14 +59,30 @@
 	<%
 				}
 				else {
-					%>
-					<h1>
-						User with username <%=username%>
-						already exists!
-					</h1>
-					Please re-enter your details
-					<a href="register_and_forward.jsp">here</a>
-	<%
+					String sqlSelect1 = "SELECT password FROM mytable WHERE username =\"" + username  + "\" ;";	
+					rs1 = statement.executeQuery(sqlSelect1);
+					
+					while(rs1.next())
+					{
+						String rs2 = rs1.getString("password");	
+
+						if(rs2.equals(password))
+						{ %>
+							<jsp:forward page="homepage.jsp">
+							<jsp:param value="<%=username%>" name="username" />
+						    </jsp:forward><%
+						}
+						else
+						{
+							%>
+							<h1>
+								User with username <%=username%>
+								your password is wrong!
+							</h1>
+							Please re-enter your details
+							<a href="register_and_forward.jsp">here</a>
+			<%			}
+					}
 				}
 				rs.close();
 			}

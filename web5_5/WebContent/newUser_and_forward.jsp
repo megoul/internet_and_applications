@@ -14,15 +14,25 @@
 <body>
 	<%
 		if (   request.getParameter("username") == null || request.getParameter("password") == null 
+		|| request.getParameter("birthdate") == null || request.getParameter("name") == null	
 				) {
 	%>
 
-	<br /> Please rgjre!
-	<form method="post" action="newUser_and_forward.jsp">
+	<br /> Please signup!!
+	<form method="post" action="newUser_and_forward.jsp"> 
 		<table>
 			<tr>
-				<td>Name:</td>
-				<td><input type="text" name="username" size=12 /></td>
+				<td>Firstname-Lastname:</td>
+				<td><input type="text" name="name" size=60 /></td>
+			</tr>
+			<tr>
+				<td>Birthdate:</td>
+				<td><input type="date" name="birthdate" /></td>
+			</tr>
+			<tr>
+				<td>Username:</td>
+			<td><input type="text" name="username" size=12 value=<%=request.getParameter("username")%> /></td>
+			
 			</tr>
 			<tr>
 				<td>Password:</td>
@@ -39,12 +49,14 @@
 			
 				String username = request.getParameter("username");
 				String password = request.getParameter("password");
+				String name = request.getParameter("name");
+				String birthdate = request.getParameter("birthdate");
 				
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				connection = DriverManager.getConnection(connectionURL, "root",
 						"");
 				statement = connection.createStatement();
-				String sql = "INSERT INTO mytable (username, password) VALUES( \"" + username  + "\" ,\"" + password + "\") ;";					
+				String sql = "INSERT INTO mytable (username, name, password, birthdate) VALUES( \"" + username  + "\" ,\"" + name + "\",\"" + password + "\",\"" + birthdate + "\") ;";					
 				int result = statement.executeUpdate(sql);
 				
 			
