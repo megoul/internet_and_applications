@@ -1,12 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="java.sql.*"%>
+<%
+	String connectionURL = "jdbc:mysql://localhost:3306/mydatabase";
+	Connection connection = null;
+	Statement statement = null;	
+	ResultSet rs = null;
+
+%>
+
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>homepage</title>
+<link rel=StyleSheet href="site.css" type="text/css"/>
+<script src="code.js" type="text/javascript"></script>
 </head>
 <body>
-hi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<div class=box id=header>myhomepage</div>
+<div>
+<ul>
+<li onclick="location.href='register_ajax.jsp';">logout</li>
+<li onclick="loadDoc('pageupdate_and_forward.jsp')">pageupdate</li>
+<li onclick="loadDoc('products.jsp')">products</li>
+<li onclick="loadDoc('about.html')">basket</li>
+<li onclick="location.href='homepage.jsp';">myhomepage</li>
+</ul>
+</div>
+<div id=content class=box>
+<% 
+
+//String username=request.getParameter("username"); 
+//session.setAttribute("username",username); 
+String username=(String)session.getAttribute("username");
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+connection = DriverManager.getConnection(connectionURL, "root",
+		"");
+statement = connection.createStatement();
+String sqlSelect = "SELECT name,birthdate FROM mytable WHERE username =\"" + username  + "\" ;";	
+rs = statement.executeQuery(sqlSelect);
+while(rs.next())
+{
+String rs1 = rs.getString("name");
+String rs2 = rs.getString("birthdate");
+//session.setAttribute("name",rs1); 
+//session.setAttribute("birthdate",rs2); 
+%>				
+<p>Username: <%=username%></p>
+<p>FirstName-LastName:<%=rs1 %> </p>
+<p>Birthdate:<%=rs2 %></p>
+
+Welcome<br/>
+we are here to help!
+</div>
 </body>
 </html>
+<%} rs.close(); %>

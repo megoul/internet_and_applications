@@ -31,8 +31,8 @@
 			</tr>
 			<tr>
 				<td>Username:</td>
-			<td><input type="text" name="username" size=12 value=<%=request.getParameter("username")%> /></td>
-			
+			<td><input type="text" name="username" value=<%=request.getParameter("username")%> size=12 onblur="return doWork();" /></td>
+			<td><span id="total"></span></td> 
 			</tr>
 			<tr>
 				<td>Password:</td>
@@ -48,6 +48,7 @@
 			}else {
 			
 				String username = request.getParameter("username");
+				session.setAttribute("username",username);
 				String password = request.getParameter("password");
 				String name = request.getParameter("name");
 				String birthdate = request.getParameter("birthdate");
@@ -63,7 +64,7 @@
 			
 				
 					%>
-	<jsp:forward page="welcome.jsp">
+	<jsp:forward page="homepage.jsp">
 		<jsp:param value="<%=username%>" name="username" />
 	</jsp:forward>
 

@@ -67,7 +67,8 @@
 						String rs2 = rs1.getString("password");	
 
 						if(rs2.equals(password))
-						{ %>
+						{ 
+							session.setAttribute("username",username); %>
 							<jsp:forward page="homepage.jsp">
 							<jsp:param value="<%=username%>" name="username" />
 						    </jsp:forward><%
@@ -85,6 +86,7 @@
 					}
 				}
 				rs.close();
+				rs1.close();
 			}
 		%>
 

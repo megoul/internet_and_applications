@@ -16,17 +16,17 @@
 </head>
 <body>
 
-	<br /> Please login!
-	<form method="post" action="register_and_forward.jsp">
+	<br />User: <%=(String)session.getAttribute("username")%>  make your changes!
+	<form method="post" action="pageupdate_and_forward.jsp">
 		<table>
 			<tr>
-				<td>Username:</td>
-				<td><input type="text" id="username" name="username" size=12 /></td>
+				<td>Firstname-LastName:</td>
+				<td><input type="text" id="name" name="name" size=60 /></td>
 				<td><span id="total"></span></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
-				<td><input  id="password" type="password" name="password" size=12 /></td>
+				<td>Birthdate:</td>
+				<td><input  id="birthdate" type="date" name="birthate" /></td>
 			</tr>
 			<tr>
 				<td colspan=2><input type=submit /></td>
