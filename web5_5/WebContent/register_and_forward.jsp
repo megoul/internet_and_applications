@@ -9,8 +9,6 @@
 	ResultSet rs = null;
 	ResultSet rs1=null;
 %>
-
-
 <html>
 <body>
 	<%

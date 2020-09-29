@@ -12,6 +12,10 @@
 
 <html>
 <head>
+<link rel=StyleSheet href="products.css" type="text/css"/>
+<script src="products.js" type="text/javascript"></script>
+<link rel=StyleSheet href="basket.css" type="text/css"/>
+<script src="basket.js" type="text/javascript"></script>
 <title>homepage</title>
 <link rel=StyleSheet href="site.css" type="text/css"/>
 <script src="code.js" type="text/javascript"></script>
@@ -23,7 +27,7 @@
 <li onclick="location.href='register_ajax.jsp';">logout</li>
 <li onclick="loadDoc('pageupdate_and_forward.jsp')">pageupdate</li>
 <li onclick="loadDoc('products.jsp')">products</li>
-<li onclick="loadDoc('about.html')">basket</li>
+<li onclick="loadDoc('basket.jsp')">basket</li>
 <li onclick="location.href='homepage.jsp';">myhomepage</li>
 </ul>
 </div>

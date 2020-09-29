@@ -4,72 +4,43 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<style>
-/* Toggle this class - hide and show the popup */
-/* Popup container - can be anything you want */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* The actual popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: -25%;
-  left: 250%;
-  margin-left: -80px;
-}
-
-
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-</style>
+<title>Products</title>
+<link rel=StyleSheet href="products.css" type="text/css"/>
+<script src="products.js" type="text/javascript"></script>
 </head>
 <body>
 <h2>Available objects</h2>
 
-
-<br>laptop ethelion300 
+<br>1)pc ethelion3000  
+<img src="images\pc1.jpg" alt="sorry wrong" width="460" height="345">
 <div class="popup" onmouseover="myFunction()" onmouseout="myFunction()">prize 400
   <span class="popuptext" id="myPopup">The price with tax(25%) is 500!</span>
 </div>
+<button type="button" onclick="alert('Added!')">Add to basket</button>
 
+<br>2)pc ethelion15000  
+<img src="images\pc2.jpg" alt="sorry wrong" width="460" height="345">
+<div class="popup" onmouseover="myFunction()" onmouseout="myFunction()">prize 500
+  <span class="popuptext" id="myPopup">The price with tax(25%) is 625!</span>
+</div>
+<button type="button" onclick="alert('Added!')">Add to basket</button>
 
-<script>
-// When the user clicks on div, open the popup
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
-</script>
+<br>3)pc ethelion4000  
+<img src="images\pc3.jpg" alt="sorry wrong" width="460" height="345">
+<div class="popup" onmouseover="myFunction()" onmouseout="myFunction()">prize 600
+  <span class="popuptext" id="myPopup">The price with tax(25%) is 750!</span>
+</div>
+<button type="button" onclick="alert('Added!')">Add to basket</button>
+
+<br>4)pc ethelion6000  
+<img src="images\pc4.jpg" alt="sorry wrong" width="460" height="345">
+<div class="popup" onmouseover="myFunction()" onmouseout="myFunction()">prize 700
+  <span class="popuptext" id="myPopup">The price with tax(25%) is 875!</span>
+</div>
+<button type="button" onclick="alert('Added!')">Add to basket</button>
+
+<%session.setAttribute("finalprice","700"); %>
+
 
 </body>
 </html>
