@@ -8,9 +8,11 @@
 	Statement statement = null;	
 	ResultSet rs5 = null;
 %>
-
-
 <html>
+<head>
+<link rel=StyleSheet href="site.css" type="text/css"/>
+<script src="site.js" type="text/javascript"></script>
+</head>
 <body>
 	<%
 		if (   request.getParameter("name") == null || request.getParameter("birthdate") == null 

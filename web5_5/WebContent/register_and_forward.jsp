@@ -10,6 +10,10 @@
 	ResultSet rs1=null;
 %>
 <html>
+<head>
+<link rel=StyleSheet href="site.css" type="text/css"/>
+<script src="site.js" type="text/javascript"></script>
+</head>
 <body>
 	<%
 		if (   request.getParameter("username") == null || request.getParameter("password") == null 

@@ -12,13 +12,9 @@
 
 <html>
 <head>
-<link rel=StyleSheet href="products.css" type="text/css"/>
-<script src="products.js" type="text/javascript"></script>
-<link rel=StyleSheet href="basket.css" type="text/css"/>
-<script src="basket.js" type="text/javascript"></script>
-<title>homepage</title>
 <link rel=StyleSheet href="site.css" type="text/css"/>
-<script src="code.js" type="text/javascript"></script>
+<script src="site.js" type="text/javascript"></script>
+<title>homepage</title>
 </head>
 <body>
 <div class=box id=header>myhomepage</div>

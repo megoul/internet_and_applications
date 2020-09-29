@@ -6,8 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Basket</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel=StyleSheet href="basket.css" type="text/css"/>
-<script src="basket.js" type="text/javascript"></script>
+<link rel=StyleSheet href="site.css" type="text/css"/>
+<script src="site.js" type="text/javascript"></script>
 </head>
 <body>
 <% String username=(String)session.getAttribute("username");
@@ -25,7 +25,7 @@ String finalprice=(String)session.getAttribute("finalprice");%>
 </form>
 
 	<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Country</button>
+  <button onclick="myBasket()" class="dropbtn">Country</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="#greece">Greece(25%)</a>
     <a href="#italy">Italy(12%)</a>
