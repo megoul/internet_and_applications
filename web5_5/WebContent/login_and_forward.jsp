@@ -7,21 +7,24 @@
 	Connection connection = null;
 	Statement statement = null;	
 	ResultSet rs = null;
+	ResultSet rs1=null;
 %>
-
-
 <html>
+<head>
+<link rel=StyleSheet href="site.css" type="text/css"/>
+<script src="site.js" type="text/javascript"></script>
+</head>
 <body>
 	<%
 		if (   request.getParameter("username") == null || request.getParameter("password") == null 
 				) {
 	%>
 
-	<br /> Please Register!
-	<form method="post" action="register_check_username.jsp">
+	<br /> Please login!
+	<form method="post" action="login_and_forward.jsp">
 		<table>
 			<tr>
-				<td>Name:</td>
+				<td>Username:</td>
 				<td><input type="text" name="username" size=12 /></td>
 			</tr>
 			<tr>
@@ -40,6 +43,8 @@
 				String username = request.getParameter("username");
 				String password = request.getParameter("password");
 				
+				
+				
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				connection = DriverManager.getConnection(connectionURL, "root",
 						"");
@@ -48,21 +53,42 @@
 				rs = statement.executeQuery(sqlSelect);
 			
 				if(rs == null || !rs.next()) {
-					String sql = "INSERT INTO mytable (username, password) VALUES( \"" + username  + "\" ,\"" + password + "\") ;";					
-					int result = statement.executeUpdate(sql);
-					%>					
-					<h1> Thank you for registering user <%=username%></h1>
-					<%
-				}else {
-					%>					
-					<h1> User with username <%=username%> already exists!</h1>
-					Please re-enter your details  <a href="register_check_username.jsp">here</a>
-					<%
+						%>
+			<jsp:forward page="newUser_and_forward.jsp">
+					<jsp:param value="<%=username%>" name="username" />
+				</jsp:forward>
+			
+	<%
+				}
+				else {
+					String sqlSelect1 = "SELECT password FROM mytable WHERE username =\"" + username  + "\" ;";	
+					rs1 = statement.executeQuery(sqlSelect1);
+					
+					while(rs1.next())
+					{
+						String rs2 = rs1.getString("password");	
+
+						if(rs2.equals(password))
+						{ 
+							session.setAttribute("username",username); %>
+							<jsp:forward page="homepage.jsp">
+							<jsp:param value="<%=username%>" name="username" />
+						    </jsp:forward><%
+						}
+						else
+						{
+							%>
+							<h1>
+								User with username <%=username%>
+								your password is wrong!
+							</h1>
+							Please re-enter your details
+							<a href="login_and_forward.jsp">here</a>
+			<%			}
+					}
 				}
 				rs.close();
-				
-
-
+				rs1.close();
 			}
 		%>
 

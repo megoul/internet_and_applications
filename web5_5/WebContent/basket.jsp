@@ -16,12 +16,18 @@ String finalprice=(String)session.getAttribute("finalprice");%>
 
 
 
-<form action="servlet1" method="POST">
+<form action="servlet1" method="post">
 <h3>Final  price <%=finalprice%> with tax __:</h3>
 
-
-	Voucher code:
-	<input type="text" name="code" size=20 />
+<table>
+  <tr>
+    <td>Voucher code:</td>
+    <td><input type="text" name="code" size=20 /></td>
+  </tr>
+  <tr>
+	<td colspan=2><input type=submit /></td>
+  </tr>
+</table>
 </form>
 
 	<div class="dropdown">
