@@ -11,13 +11,13 @@
 </head>
 <body>
 <% String username=(String)session.getAttribute("username");
-String finalprice=(String)session.getAttribute("finalprice");%>
+//String finalprice=(String)session.getAttribute("finalprice");%>
 <h2><%=username%> the products you chose</h2>
 
 
 
 <form action="servlet1" method="post">
-<h3>Final  price <%=finalprice%> with tax __:</h3>
+<h3>Final  price  with tax __:</h3> <%//=finalprice%>
 
 <table>
   <tr>

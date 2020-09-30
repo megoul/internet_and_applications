@@ -67,7 +67,7 @@ session.setAttribute("pc4","0");
 <div class="popup" onmouseover="myProduct4()" onmouseout="myFunction()">prize 700
   <span class="popuptext" id="myPopup4">The price with tax(25%) is 875!</span>
 </div>
-<button type="button" onclick="myFunction4()" >Add to basket</button>
+<button type="button" onclick="alert('added')" >Add to basket</button>
 <script>
 function myFunction1() {
 	session.setAttribute("pc1","1");

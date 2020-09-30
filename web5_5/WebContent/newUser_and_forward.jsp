@@ -8,9 +8,11 @@
 	Statement statement = null;	
 	ResultSet rs = null;
 %>
-
-
 <html>
+<head>
+<link rel=StyleSheet href="login.css" type="text/css"/>
+<script src="site.js" type="text/javascript"></script>
+</head>
 <body>
 	<%
 		if (   request.getParameter("username") == null || request.getParameter("password") == null 
@@ -18,30 +20,29 @@
 				) {
 	%>
 
-	<br /> Please signup!!
+	
 	<form method="post" action="newUser_and_forward.jsp"> 
-		<table>
-			<tr>
-				<td>Firstname-Lastname:</td>
-				<td><input type="text" name="name" size=60 /></td>
-			</tr>
-			<tr>
-				<td>Birthdate:</td>
-				<td><input type="date" name="birthdate" /></td>
-			</tr>
-			<tr>
-				<td>Username:</td>
-			<td><input type="text" name="username" value=<%=request.getParameter("username")%> size=12 onblur="return doWork();" /></td>
-			<td><span id="total"></span></td> 
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type="password" name="password" size=12 /></td>
-			</tr>
-			<tr>
-				<td colspan=2><input type=submit /></td>
-			</tr>
-		</table>
+		<div class="login-box">
+			<h1>Signup</h1>
+			
+			<div class="login-in">Name:
+			<input type="text" placeholder="firstname-lastname" name="name" />
+			</div>
+			
+			<div class="login-in">Birthdate:
+			<input type="date" name="birthdate" />
+			</div>
+			
+			<div class="login-in">Username:
+			<input type="text" name="username" value=<%=request.getParameter("username")%>  onblur="return doWork();">
+			</div>
+			
+			<div class="login-in">Password:
+			<input type="password" placeholder="password" name="password" value="">
+			</div>
+			
+			<input type=submit class="login-btn" type="button"  value="Sing up">
+		</div>
 	</form>
 
 	<%

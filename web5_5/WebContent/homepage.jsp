@@ -12,13 +12,11 @@
 
 <html>
 <head>
-<link rel=StyleSheet href="site.css" type="text/css"/>
+<link rel=StyleSheet href="login.css" type="text/css"/>
 <script src="site.js" type="text/javascript"></script>
 <title>homepage</title>
 </head>
 <body>
-<div class=box id=header>myhomepage</div>
-<div>
 <ul>
 <li onclick="location.href='login_and_forward.jsp';">logout</li>
 <li onclick="loadDoc('pageupdate_and_forward.jsp')">pageupdate</li>
@@ -46,12 +44,24 @@ String rs2 = rs.getString("birthdate");
 //session.setAttribute("name",rs1); 
 //session.setAttribute("birthdate",rs2); 
 %>				
-<p>Username: <%=username%></p>
-<p>FirstName-LastName:<%=rs1 %> </p>
-<p>Birthdate:<%=rs2 %></p>
 
-Welcome<br/>
-we are here to help!
+		<div class="login-box">
+			<h1>Homepage-Your Data</h1>
+		
+			<div class="login-in">
+			<p>Username: <%=username%></p>
+			</div>
+		
+			<div class="login-in">
+			<p>FirstName-LastName:<%=rs1 %> </p>
+			</div>
+			
+			<div class="login-in">
+			<p>Birthdate:<%=rs2 %></p>
+			</div>
+		
+			
+		</div>
 </div>
 </body>
 </html>

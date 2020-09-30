@@ -11,7 +11,7 @@
 %>
 <html>
 <head>
-<link rel=StyleSheet href="site.css" type="text/css"/>
+<link rel=StyleSheet href="login.css" type="text/css"/>
 <script src="site.js" type="text/javascript"></script>
 </head>
 <body>
@@ -20,21 +20,21 @@
 				) {
 	%>
 
-	<br /> Please login!
+	
 	<form method="post" action="login_and_forward.jsp">
-		<table>
-			<tr>
-				<td>Username:</td>
-				<td><input type="text" name="username" size=12 /></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type="password" name="password" size=12 /></td>
-			</tr>
-			<tr>
-				<td colspan=2><input type=submit /></td>
-			</tr>
-		</table>
+		<div class="login-box">
+			<h1>Login</h1>
+		
+			<div class="login-in">
+			<input type="text" placeholder="username" name="username">
+			</div>
+		
+			<div class="login-in">
+			<input type="password" placeholder="password" name="password">
+			</div>
+		
+			<input type=submit class="login-btn" type="button"  value="Sing in">
+		</div>
 	</form>
 
 	<%
