@@ -17,7 +17,7 @@ String pc2=(String)session.getAttribute("pc2");
 String pc3=(String)session.getAttribute("pc3");
 String pc4=(String)session.getAttribute("pc4");
 Integer pricefree=(Integer)session.getAttribute("pricefree");
-Integer finalprice=(Integer)session.getAttribute("finalprice");
+Integer finalprice=pricefree+pricefree/4;
 %>
 <h2><%=username%> the products you chose are</h2>
 <% 
@@ -41,9 +41,6 @@ pc2 is<%=pc2 %>
 pc3 is<%=pc3 %>
 pc4 is<%=pc4 %>
 pricefree is <%=pricefree %>
-
-
-
 <form action="servlet2" method="post">
 <h3>Final  price  with tax is __<%=finalprice %>:</h3> <%//=finalprice%>
 
@@ -57,39 +54,23 @@ pricefree is <%=pricefree %>
   </tr>
 </table>
 </form>
-<% 
-if (request.getParameter("country") == null) 
-		{
-			
-	%>
-		Final price is:<%=finalprice %> 
-		Pricefree is:<%=pricefree %>
-		<form method="post" action="basket.jsp">	
-			
-			<select name="country">
-			  	
-			  	<option value="greece" >Greece(25%)</option>
-			  	<option value="italy" >Italy(12%)</option>
-			  	<option value="spain" >Spain(10%)</option>
-			  	<option value="uk" >UK(20%)</option>
-			  	<option value="germany">Germany(40%)</option>
-		  	</select>
-		  	<input type="submit" value="Submit">
-		  </form>	
-		<%   }
-		  else
-		  {	
-		  		String country = request.getParameter("country");
-		  				%>
-		  	
-			 <jsp:forward page="country.jsp">
-				<jsp:param value="<%=country%>" name="country" />
-				<jsp:param value="<%=finalprice%>" name="finalprice" />
-				<jsp:param value="<%=pricefree%>" name="pricefree" />
-				</jsp:forward>
-				
-		 <% } %>
 
+	<form method="post" action="county.jsp">
+		<div class="dropdown">
+		  <button onclick="myBasket()" class="dropbtn">Country</button>
+		  <div id="myDropdown" class="dropdown-content">
+		  	<select name="country">
+		  	
+		  	<option value="greece" >Greece(25%)</option>
+		  	<option value="italy" >Italy(12%)</option>
+		  	<option value="spain" >Spain(10%)</option>
+		  	<option value="uk" >UK(20%)</option>
+		  	<option value="germany">Germany(40%)</option>
+		  	</select>
+		  	 <input type="submit" value="Submit">
+		  </div>
+		</div>
+	</form>
 
 </body>
 </html>

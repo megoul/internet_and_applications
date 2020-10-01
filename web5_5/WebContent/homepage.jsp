@@ -20,7 +20,7 @@
 <ul>
 <li onclick="location.href='login_and_forward.jsp';">logout</li>
 <li onclick="loadDoc('pageupdate_and_forward.jsp')">pageupdate</li>
-<li onclick="loadDoc('products.jsp')">products</li>
+<li onclick="location.href='products.jsp';">products</li>
 <li onclick="loadDoc('basket.jsp')">basket</li>
 <li onclick="location.href='homepage.jsp';">myhomepage</li>
 </ul>

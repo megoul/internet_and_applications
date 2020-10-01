@@ -1,3 +1,26 @@
+////////////////////////////////////////////////////////////////////////////////////////for added  products
+function myFunction1() {
+	alert("Added");
+    var x= "checked1";
+    window.location.replace("products.jsp?checked="+x);
+}
+
+function myFunction2() {
+	alert("Added");
+    var x = "checked2";
+    window.location.replace("products.jsp?checked="+x);
+}
+function myFunction3() {
+	alert("Added");
+    var x = "checked3";
+    window.location.replace("products.jsp?checked="+x);
+}
+function myFunction4() {
+	alert("Added");
+    var x = "checked4";
+    window.location.replace("products.jsp?checked="+x);
+}
+
 ////////////////////////////////////////////gia thn timh pou kanei pop up
 // When the user clicks on div, open the popup
 // When the user clicks on div, open the popup
@@ -131,4 +154,4 @@ function setOutput() {
 		document.getElementById('total').innerHTML = httpObject.responseText;
 	}
 }
-////////////////////////////////////////////////////////////////////////////////////////
+

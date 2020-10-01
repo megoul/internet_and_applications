@@ -8,9 +8,20 @@
 		<servlet-name>servlet1</servlet-name>
 		<servlet-class>servlet1</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>servlet2</display-name>
+		<servlet-name>servlet2</servlet-name>
+		<servlet-class>servlet2</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>servlet1</servlet-name>
 		<url-pattern>/servlet1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>servlet2</servlet-name>
+		<url-pattern>/servlet2</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

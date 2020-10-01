@@ -8,30 +8,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class servlet1 extends HttpServlet {
+/**
+ * Servlet implementation class servlet2
+ */
+public class servlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-    public servlet1() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public servlet2() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
 		String code=request.getParameter("code");
-		out.print(code);
-		//String finalprice=(String)session.getAttribute("finalprice");
-		//if(code.equals("studentdiscount")) 
-		//{
-			//session.setAttribute("finalprice","800");
-		//}
+		
+		PrintWriter out=response.getWriter();
+		response.setContentType("text/html");
+		
+		if(code.equals("studentdiscount")) {
+			out.println("you have discount");
+		}
+		else {
+			out.println("Sorry no discount");
+		}
 	}
 
 }
