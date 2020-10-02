@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@page import="javax.swing.JOptionPane"%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -23,16 +24,16 @@ Integer finalprice=(Integer)session.getAttribute("finalprice");
 <% 
 
 if(pc1!=null){ %>
-<p><%=pc1 %></p>
+<p><%=pc1 %> with id=1</p>
 <%}
 if(pc2!=null){ %>
-<p><%=pc2 %></p>
+<p><%=pc2 %> with id=2</p>
 <%}
 if(pc3!=null){ %>
-<p><%=pc3 %></p>
+<p><%=pc3 %> with id=3</p>
 <%}
 if(pc4!=null){ %>
-<p><%=pc4 %></p>
+<p><%=pc4 %> with id=4</p>
 <%}
 
 %>
@@ -45,25 +46,25 @@ pricefree is <%=pricefree %>
 
 
 <form action="servlet2" method="post">
-<h3>Final  price  with tax is __<%=finalprice %>:</h3> <%//=finalprice%>
-
+<h3>Final  price  with tax is __<%=finalprice %>(price without tax is <%=pricefree %>)</h3> 
 <table>
   <tr>
     <td>Voucher code:</td>
     <td><input type="text" name="code" size=20 /></td>
   </tr>
   <tr>
-	<td colspan=2><input type=submit /></td>
+	<td><input type="submit" value="Submit code" /></td>
   </tr>
 </table>
 </form>
+
+
+
 <% 
 if (request.getParameter("country") == null) 
 		{
 			
 	%>
-		Final price is:<%=finalprice %> 
-		Pricefree is:<%=pricefree %>
 		<form method="post" action="basket.jsp">	
 			
 			<select name="country">
@@ -74,7 +75,7 @@ if (request.getParameter("country") == null)
 			  	<option value="uk" >UK(20%)</option>
 			  	<option value="germany">Germany(40%)</option>
 		  	</select>
-		  	<input type="submit" value="Submit">
+		  	<input type="submit" value="Submit Country">
 		  </form>	
 		<%   }
 		  else
@@ -89,6 +90,9 @@ if (request.getParameter("country") == null)
 				</jsp:forward>
 				
 		 <% } %>
+
+<button type="button" onclick="location.href='done.jsp';">Done!</button>
+
 
 
 </body>

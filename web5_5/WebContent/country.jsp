@@ -42,9 +42,11 @@
 						
             	  finalprice is <%=finalprice %>.Go back to basket
                 <a href="basket.jsp">link text</a>
-                
+                <% 
+              //  request.getRequestDispatcher("basket.jsp").forward(request,response);
+				%>
 				
-				<% //request.getRequestDispatcher("try2.jsp").forward(request,response); %>
+				
 				
 			<%
 						
