@@ -34,11 +34,11 @@
 			</div>
 			
 			<div class="login-in">Username:
-			<input type="text" name="username" value=<%=request.getParameter("username")%>  onblur="return doWork();">
+			<input type="text" name="username" value=<%=request.getParameter("username")%> >
 			</div>
 			
 			<div class="login-in">Password:
-			<input type="password" placeholder="password" name="password" value="">
+			<input type="password" placeholder="password" name="password" >
 			</div>
 			
 			<input type=submit class="login-btn" type="button"  value="Sing up">

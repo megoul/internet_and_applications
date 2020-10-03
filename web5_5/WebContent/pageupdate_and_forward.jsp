@@ -19,6 +19,7 @@
 				) {
 	%>
 
+	
 	<br /> User: <%=(String)session.getAttribute("username")%> make your changes!!
 	<form method="post" action="pageupdate_and_forward.jsp">
 		<table>

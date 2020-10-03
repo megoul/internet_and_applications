@@ -1,38 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
-<%! /*
-class pc
-{
-    public String name;
-    public int price;  
-    public int  checked;
-    
-    public pc(String a, int b, int c) {
-        name = a;
-        price = b;
-        checked=c;
-    }
-    
-    public void setChecked(int a) {
-    	checked = a;
-    }
- };
- public int finalprice=0;
- pc pc1= new pc("ethelion3000",400,0);
- pc pc2= new pc("ethelion15000",500,0);
- pc pc3= new pc("ethelion4000",600,0);
- pc pc4= new pc("ethelion6000",700,0); */
-
- %>
+    pageEncoding="ISO-8859-1"
+%>
 <%
 int pricefree=0;
 int finalprice=0;
-//Integer pricefree=(Integer)session.getAttribute("pricefree");
-//session.setAttribute("pc1","0");
-//session.setAttribute("pc2","0");
-//session.setAttribute("pc3","0");
-//session.setAttribute("pc4","0");
 %>
 <!DOCTYPE html>
 <html>
@@ -158,13 +129,5 @@ int finalprice=0;
 	}
 
 %>
-
-
-
-pc1 is: <%=session.getAttribute("pc1") %>
-pc2 is: <%=session.getAttribute("pc2") %>
-pc3 is: <%=session.getAttribute("pc3") %>
-pc4 is: <%=session.getAttribute("pc4") %>
-pricefree is: <%=session.getAttribute("pricefree") %>
 </body>
 </html>

@@ -9,8 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel=StyleSheet href="site.css" type="text/css"/>
 <script src="site.js" type="text/javascript"></script>
-</head>
-<body>
 <style>
  h3 {
   width: 50%;
@@ -21,6 +19,9 @@
   font-size: 30px;
 }
 </style>
+</head>
+<body>
+
 <% 
 String username=(String)session.getAttribute("username");
 String pc1=(String)session.getAttribute("pc1");
@@ -48,13 +49,6 @@ if(pc4!=null){ %>
 <%}
 
 %>
-pc1 is<%=pc1 %>
-pc2 is<%=pc2 %>
-pc3 is<%=pc3 %>
-pc4 is<%=pc4 %>
-pricefree is <%=pricefree %>
-
-
 
 <form action="servlet2" method="post">
 
@@ -122,4 +116,5 @@ if (request.getParameter("country") == null)
 
 
 </body>
+
 </html>

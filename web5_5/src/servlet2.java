@@ -26,8 +26,8 @@ public class servlet2 extends HttpServlet {
 		HttpSession session=request.getSession(true);
 		Integer finalprice=(Integer)session.getAttribute("finalprice");
 		
-		PrintWriter out=response.getWriter();
-		response.setContentType("text/html");
+		//PrintWriter out=response.getWriter();
+		//response.setContentType("text/html");
 		
 		if(code.equals("studentdiscount")) {
 			//out.println("you have discount");

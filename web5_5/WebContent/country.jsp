@@ -11,7 +11,9 @@
 %>
 <html>
 <head>
-<title>Insert title here</title>
+<link rel=StyleSheet href="site.css" type="text/css"/>
+<script src="site.js" type="text/javascript"></script>
+<title>country</title>
 </head>
 <body>
 <% 
@@ -38,10 +40,13 @@
 				   //// Double pricefree= (Double) session.getAttribute("pricefree");	
 				finalprice=((100+rs1)*pricefree)/100;
 					session.setAttribute("finalprice",finalprice);
-					//request.getRequestDispatcher("endiameso.jsp").forward(request,response);
+				
+					
+					
 					%>
-					  finalprice is <%=finalprice %>.Go back to basket
-          <a href="basket.jsp">basket</a>
+
+				     The country you chose is <%=country %>.Finalprice now is <%=finalprice %>.Go back to
+          <a href="basket.jsp">basket</a> 
 <% 
 
 					
