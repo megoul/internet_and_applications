@@ -18,7 +18,7 @@
 		Final price is:<%=finalprice %> 
 		Pricefree is:<%=pricefree %>
 		<form method="post" action="try2.jsp">	
-			
+			  <button onclick="myBasket()" class="dropbtn">Country</button>
 			<select name="country">
 			  	
 			  	<option value="greece" >Greece(25%)</option>

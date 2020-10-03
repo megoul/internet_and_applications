@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@page import="javax.swing.JOptionPane"%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -17,22 +18,23 @@ String pc2=(String)session.getAttribute("pc2");
 String pc3=(String)session.getAttribute("pc3");
 String pc4=(String)session.getAttribute("pc4");
 Integer pricefree=(Integer)session.getAttribute("pricefree");
-Integer finalprice=pricefree+pricefree/4;
+Integer finalprice=(Integer)session.getAttribute("finalprice");
+//char[]result = (pc1+pc2+pc3+pc4).toCharArray();
 %>
-<h2><%=username%> the products you chose are</h2>
+<h2><%=username%> the products you chose are </h2>
 <% 
 
 if(pc1!=null){ %>
-<p><%=pc1 %></p>
+<p><%=pc1 %> with id=1</p>
 <%}
 if(pc2!=null){ %>
-<p><%=pc2 %></p>
+<p><%=pc2 %> with id=2</p>
 <%}
 if(pc3!=null){ %>
-<p><%=pc3 %></p>
+<p><%=pc3 %> with id=3</p>
 <%}
 if(pc4!=null){ %>
-<p><%=pc4 %></p>
+<p><%=pc4 %> with id=4</p>
 <%}
 
 %>
@@ -41,36 +43,58 @@ pc2 is<%=pc2 %>
 pc3 is<%=pc3 %>
 pc4 is<%=pc4 %>
 pricefree is <%=pricefree %>
-<form action="servlet2" method="post">
-<h3>Final  price  with tax is __<%=finalprice %>:</h3> <%//=finalprice%>
 
+
+
+<form action="servlet2" method="post">
+<h3>Final  price  with tax is __<%=finalprice %>(price without tax is <%=pricefree %>)</h3> 
 <table>
   <tr>
     <td>Voucher code:</td>
     <td><input type="text" name="code" size=20 /></td>
   </tr>
   <tr>
-	<td colspan=2><input type=submit /></td>
+	<td><input type="submit" value="Submit code" /></td>
   </tr>
 </table>
 </form>
 
-	<form method="post" action="county.jsp">
-		<div class="dropdown">
-		  <button onclick="myBasket()" class="dropbtn">Country</button>
-		  <div id="myDropdown" class="dropdown-content">
-		  	<select name="country">
-		  	
-		  	<option value="greece" >Greece(25%)</option>
-		  	<option value="italy" >Italy(12%)</option>
-		  	<option value="spain" >Spain(10%)</option>
-		  	<option value="uk" >UK(20%)</option>
-		  	<option value="germany">Germany(40%)</option>
+
+
+<% 
+if (request.getParameter("submit") == null) 
+		{
+			
+	%>
+		<form method="post" action="basket.jsp">	
+			
+			<select name="country">
+			  	
+			  	<option value="greece" >Greece(25%)</option>
+			  	<option value="italy" >Italy(12%)</option>
+			  	<option value="spain" >Spain(10%)</option>
+			  	<option value="uk" >UK(20%)</option>
+			  	<option value="germany">Germany(40%)</option>
 		  	</select>
-		  	 <input type="submit" value="Submit">
-		  </div>
-		</div>
-	</form>
+		  	<input type="submit" value="Submit Country" name="submit">
+		  </form>	
+		<%   }
+		  else
+		  {	
+		  		String country = request.getParameter("country");
+		  				%>
+		  	
+			 <jsp:forward page="country.jsp">
+				<jsp:param value="<%=country%>" name="country" />
+				<jsp:param value="<%=finalprice%>" name="finalprice" />
+				<jsp:param value="<%=pricefree%>" name="pricefree" />
+				</jsp:forward>
+				
+		 <% } %>
+
+<button type="button" onclick="location.href='done.jsp';">Done!</button>
+
+
 
 </body>
 </html>

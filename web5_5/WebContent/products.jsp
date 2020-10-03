@@ -52,7 +52,7 @@ int finalprice=0;
 
 				<br>1)pc ethelion3000
 				<img src="images\pc1.jpg" alt="sorry wrong" width="460" height="345">
-				<div class="popup" onmouseover="myProduct()" onmouseout="myFunction()">prize 400
+				<div class="popup" onmouseover="myProduct()" onmouseout="myProduct()">prize 400
 				  <span class="popuptext" id="myPopup">The price with tax(25%) is 500!</span>
 				</div>
 				<button type="button" onclick="myFunction1()">Add to basket</button>
@@ -60,7 +60,7 @@ int finalprice=0;
 				
 				<br>2)pc ethelion15000  
 				<img src="images\pc2.jpg" alt="sorry wrong" width="460" height="345">
-				<div class="popup" onmouseover="myProduct2()" onmouseout="myFunction()">prize 500
+				<div class="popup" onmouseover="myProduct2()" onmouseout="myProduct2()">prize 500
 				  <span class="popuptext" id="myPopup2">The price with tax(25%) is 625!</span>
 				</div>
 				<button type="button" onclick="myFunction2()" >Add to basket</button>
@@ -68,14 +68,14 @@ int finalprice=0;
 				
 				<br>3)pc ethelion4000  
 				<img src="images\pc3.jpg" alt="sorry wrong" width="460" height="345">
-				<div class="popup" onmouseover="myProduct3()" onmouseout="myFunction()">prize 600
+				<div class="popup" onmouseover="myProduct3()" onmouseout="myProduct3()">prize 600
 				  <span class="popuptext" id="myPopup3">The price with tax(25%) is 750!</span>
 				</div>
 				<button type="button" onclick="myFunction3()" >Add to basket</button>
 				
 				<br>4)pc ethelion6000  
 				<img src="images\pc4.jpg" alt="sorry wrong" width="460" height="345">
-				<div class="popup" onmouseover="myProduct4()" onmouseout="myFunction()">prize 700
+				<div class="popup" onmouseover="myProduct4()" onmouseout="myProduct4()">prize 700
 				  <span class="popuptext" id="myPopup4">The price with tax(25%) is 875!</span>
 				</div>
 				<button type="button" onclick="myFunction4()" >Add to basket</button>

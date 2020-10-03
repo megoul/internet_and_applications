@@ -34,6 +34,7 @@ public class servlet2 extends HttpServlet {
 			//out.println(code);
 			finalprice=finalprice - finalprice/5;
 			session.setAttribute("finalprice",finalprice);
+			session.setAttribute("flag","set");
 			//out.println((Integer)session.getAttribute("finalprice"));
 			RequestDispatcher dis = request.getRequestDispatcher("basket.jsp");
 			dis.forward(request,response);

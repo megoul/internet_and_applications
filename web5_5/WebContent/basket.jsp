@@ -11,6 +11,16 @@
 <script src="site.js" type="text/javascript"></script>
 </head>
 <body>
+<style>
+ h3 {
+  width: 50%;
+  height: 60px;
+  margin: 10px;
+  padding: 0;
+  display: inline;
+  font-size: 30px;
+}
+</style>
 <% 
 String username=(String)session.getAttribute("username");
 String pc1=(String)session.getAttribute("pc1");
@@ -19,21 +29,22 @@ String pc3=(String)session.getAttribute("pc3");
 String pc4=(String)session.getAttribute("pc4");
 Integer pricefree=(Integer)session.getAttribute("pricefree");
 Integer finalprice=(Integer)session.getAttribute("finalprice");
+//char[]result = (pc1+pc2+pc3+pc4).toCharArray();
 %>
-<h2><%=username%> the products you chose are</h2>
+<h2><%=username%> the products you chose are </h2>
 <% 
 
 if(pc1!=null){ %>
-<p><%=pc1 %> with id=1</p>
+<p>pc1 with id= <%=pc1 %></p>
 <%}
 if(pc2!=null){ %>
-<p><%=pc2 %> with id=2</p>
+<p>pc2 with id= <%=pc2 %></p>
 <%}
 if(pc3!=null){ %>
-<p><%=pc3 %> with id=3</p>
+<p>pc3 with id= <%=pc3 %></p>
 <%}
 if(pc4!=null){ %>
-<p><%=pc4 %> with id=4</p>
+<p>pc4 with id= <%=pc4 %></p>
 <%}
 
 %>
@@ -46,17 +57,29 @@ pricefree is <%=pricefree %>
 
 
 <form action="servlet2" method="post">
-<h3>Final  price  with tax is __<%=finalprice %>(price without tax is <%=pricefree %>)</h3> 
+
+<%
+if((String)session.getAttribute("flag")== "set")
+{
+	%><h3> Final  price  with tax is </h3> <h3 style="color:red"><%=finalprice %></h3>  <% 
+}
+else
+{
+   %><h3> Final  price  with tax is</h3> <h3><%=finalprice %></h3>  <% 
+}
+%>
+<h3>(price without tax is <%=pricefree %>)</h3>
 <table>
   <tr>
     <td>Voucher code:</td>
     <td><input type="text" name="code" size=20 /></td>
   </tr>
   <tr>
-	<td><input type="submit" value="Submit code" /></td>
+	<td><input type="submit" value="Submit code"/></td>
   </tr>
 </table>
 </form>
+
 
 
 
@@ -65,6 +88,8 @@ if (request.getParameter("country") == null)
 		{
 			
 	%>
+		<br>
+		<br>
 		<form method="post" action="basket.jsp">	
 			
 			<select name="country">
@@ -90,7 +115,8 @@ if (request.getParameter("country") == null)
 				</jsp:forward>
 				
 		 <% } %>
-
+<br>
+<br>
 <button type="button" onclick="location.href='done.jsp';">Done!</button>
 
 
