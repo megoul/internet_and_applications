@@ -39,11 +39,11 @@
 				finalprice=((100+rs1)*pricefree)/100;
 					session.setAttribute("finalprice",finalprice);
 					//request.getRequestDispatcher("endiameso.jsp").forward(request,response);
-
 					%>
 					  finalprice is <%=finalprice %>.Go back to basket
-            <a href="basket.jsp">link text</a>
+          <a href="basket.jsp">basket</a>
 <% 
+
 					
 						
 				} 

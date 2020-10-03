@@ -18,7 +18,7 @@
 </head>
 <body>
 <ul>
-<li onclick="location.href='login_and_forward.jsp';">logout</li>
+<li onclick="location.href='logout.jsp';">logout</li>
 <li onclick="loadDoc('pageupdate_and_forward.jsp')">pageupdate</li>
 <li onclick="location.href='products.jsp';">products</li>
 <li onclick="loadDoc('basket.jsp')">basket</li>

@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel=StyleSheet href="site.css" type="text/css"/>
+<script src="site.js" type="text/javascript"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -18,15 +20,15 @@
 		Final price is:<%=finalprice %> 
 		Pricefree is:<%=pricefree %>
 		<form method="post" action="try2.jsp">	
+		<div class="dropdown">
 			  <button onclick="myBasket()" class="dropbtn">Country</button>
-			<select name="country">
-			  	
-			  	<option value="greece" >Greece(25%)</option>
-			  	<option value="italy" >Italy(12%)</option>
-			  	<option value="spain" >Spain(10%)</option>
-			  	<option value="uk" >UK(20%)</option>
-			  	<option value="germany">Germany(40%)</option>
-		  	</select>
+			 <div id="myDropdown" class="dropdown-content">
+    <a href="greece" name="country">Greece(25%)</a>
+    <a href="italy" name="country">Italy(12%)</</a>
+    <a href="uk" name="country">UK(20%)</a>
+    <a href="germany" name="country">Germany(40%)</a>
+  </div>
+  </div>
 		  	<input type="submit" value="Submit">
 		  </form>	
 		<%   }

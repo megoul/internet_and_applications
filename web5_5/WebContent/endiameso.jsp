@@ -7,8 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-hi!!!!!!!!!!!!!!!
+
 <% 
+Integer finalprice=Integer.parseInt(request.getParameter("finalprice"));
+%>
+
+
+<%
 request.getRequestDispatcher("basket.jsp").forward(request,response);
 %>
              

@@ -91,14 +91,14 @@ if (request.getParameter("country") == null)
 		<br>
 		<br>
 		<form method="post" action="basket.jsp">	
-			
+			<label for="country">country:</label>
 			<select name="country">
 			  	
-			  	<option value="greece" >Greece(25%)</option>
-			  	<option value="italy" >Italy(12%)</option>
-			  	<option value="spain" >Spain(10%)</option>
-			  	<option value="uk" >UK(20%)</option>
-			  	<option value="germany">Germany(40%)</option>
+			  	<option value=greece >Greece(25%)</option>
+			  	<option value=italy >Italy(12%)</option>
+			  	<option value=spain >Spain(10%)</option>
+			  	<option value=uk >UK(20%)</option>
+			  	<option value=germany>Germany(40%)</option>
 		  	</select>
 		  	<input type="submit" value="Submit Country">
 		  </form>	
